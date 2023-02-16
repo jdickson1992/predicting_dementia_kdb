@@ -1,6 +1,6 @@
 # Predicting the early symptoms of Dementia
 
-*Modelling machine learning techniques using kdb+ to predict the early onset/symptoms of Dementia &amp; Alzheimer's Disease*
+*Modelling machine learning techniques using kdb+ to predict the early symptoms of Dementia &amp; Alzheimer's Disease*
 
 I created a series of blogs describing this project over at https://jdickson.dev/ 📍
 
