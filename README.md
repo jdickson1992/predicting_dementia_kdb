@@ -25,6 +25,9 @@ Also, the `q` logic used in this project is *disorganised*. The lack of namespac
 
 Oh, this has **only** been tested on `amd64`, **not** M1 (`arm64`) chips (see [here](https://github.com/jupyter/docker-stacks/issues/1549) for possible issues)
 
+**Update**
+- Tested successfully on M1 and WSL2 with **Docker Desktop 4.16.2**
+
 ## Getting Started 🎬
 
 Everything is containerised 🐳
