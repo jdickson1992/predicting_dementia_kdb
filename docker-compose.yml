@@ -7,6 +7,8 @@ services:
     ports:
       - 8888:8888
       - 9090:9090
+    environment:
+      - THREADS=3  #Used by GridSearch / RandomizedSearchCV: Number of jobs to run in parallel. Perf > as Threads >
     volumes:
       - ${PWD}/data:/home/qbie/data
       - ${PWD}/code/q:/home/qbie/code/q

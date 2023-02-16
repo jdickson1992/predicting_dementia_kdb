@@ -32,8 +32,10 @@ countPlot:{[t;x;y]
  fig[`:set_size_inches][22.5;16.5];
  ax1: fig[`:add_subplot]["121"];
  ax2: fig[`:add_subplot]["122"];
- sns[`:countplot][t[x];`ax pykw ax1];
- sns[`:countplot][t[y];`ax pykw ax2];
+ // fill nulls temporarily
+ data:0^t[x];
+ sns[`:countplot][data;`ax pykw ax1];
+ sns[`:countplot][data;`ax pykw ax2];
  plt[`:show][];}
 
 

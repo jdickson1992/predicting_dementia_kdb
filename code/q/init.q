@@ -1,5 +1,6 @@
 
 .init.main:{
+    system"c 200 200";
     system"l code/q/log.q";
     seed::42;
     .log.warn["Using random seed ",string[seed]," for reproducible results";()];

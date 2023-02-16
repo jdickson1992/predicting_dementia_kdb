@@ -306,7 +306,7 @@ hyperTune:{
  tuner:value string[z];
  //Naive Bayes does not perform grid search
  if[not x=`NaiveBayes;
-    optParams:tunedEval[tuner[mdl;y;`scoring pykw "balanced_accuracy";`cv pykw 10]]];
+    optParams:tunedEval[tuner[mdl;y;`scoring pykw "balanced_accuracy";`cv pykw 10;`n_jobs pykw "J"$getenv`THREADS]]];
  //Compute duration that grid-search/randomized grid search took
  .log.warn["Hypertuning parameters took: ",string[end:.z.p - start];()];
  if[x=`SVM; optParams[`probability]: 1b];
