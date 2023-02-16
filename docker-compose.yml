@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  notebook:
+    build:
+      context: .
+    ports:
+      - 8888:8888
+      - 9090:9090
+    volumes:
+      - ${PWD}/data:/home/qbie/data
+      - ${PWD}/code/q:/home/qbie/code/q
+      - ${PWD}/predictingDementia.ipynb:/home/qbie/predictingDementia.ipynb
+    command: jupyter notebook predictingDementia.ipynb --ip 0.0.0.0 --no-browser --allow-root
+  
+  gui:
+    restart: always
+    image: httpd:latest
+    ports:
+      - 8080:80
+    volumes:
+      - ${PWD}/code/html:/usr/local/apache2/htdocs

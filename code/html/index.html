@@ -1,0 +1,173 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Detecting_Dementia</title>
+        <script>
+            var connInput,ws;
+            var connect = function(){
+                             if("WebSocket" in window){  // check if WebSockets supported
+                                               connInput = document.getElementById("hostport").value;
+                                               // open a WebSocket
+                                               ws = new WebSocket("ws://" + connInput);
+                                               ws.onopen = function(){
+                                                   // called upon successful WebSocket connection
+                                                   document.getElementById("connectionStatus").innerHTML = " Connected";
+                                                   document.getElementById("connectionStatus").style.color = "magenta"
+                                               };
+
+                                               ws.onmessage= function(e){
+                                                    $("#probDisplay").css("visibility", "visible");
+                                                    $("#probDisplay > span").html(e.data);
+                                               };
+
+                                               ws.onclose = function(){
+                                                   document.getElementById("connectionStatus").innerHTML = " Disconnected";
+                                                   document.getElementById("connectionStatus").style.color = "red"
+                                               };
+
+                                           }
+                else alert("Your browser doesn't support websockets");        
+            };
+          
+                var disconnect = function(){
+                       ws.close();
+            };
+
+            var sendKDB = function(){
+                var age = document.getElementById("age").value;
+                if (age == "") {
+                    alert("ERROR: Please enter your age ");
+                    return false;
+                }
+                var boruta = document.getElementById("boruta").value;
+                var gender = document.getElementById("gender").value;
+                if ( gender == "male") {
+                      gender = 1;
+                      var male = 1;
+                      var female = 0;
+                } else {
+                      gender = 0;
+                      var female = 1;
+                      var male = 0;
+                }
+                var educ = document.getElementById("educ").value;
+                if (educ == "") {
+                    alert("ERROR: Please enter how many years of education you have ");
+                    return false;
+                }
+                var ses = document.getElementById("ses").value;
+                var mmse = document.getElementById("mmse").value;
+                var etiv = document.getElementById("etiv").value;
+                var nwbv = document.getElementById("nwbv").value;
+                var asf = document.getElementById("asf").value;
+                var algo = document.getElementById("algo").value; 
+                var dict = "(`age`boruta`M`F`educ`ses`mmse`etiv`nwbv`asf`algo)!(" + age + ";`" + boruta + ";" + male + ";" + female + ";" + educ + ";" + ses + ";" + mmse + ";" + etiv + ";" + nwbv + ";" + asf + ";`" + algo + ")";
+                ws.send(dict);
+            }
+
+        </script>
+    </head>
+    <body>
+    <font face = "courier,helvetica,monaco">
+    <h2> Calculating the probability an individual exhibits the early symptoms of Dementia </h2>
+        <div>
+                <label for="hostport">Connect to: </label>
+                <input type="text" value= "localhost:9090" placeholder="localhost:9090" id="hostport">
+                <button type="button" onclick="connect()">Connect</button>
+                <button type="button" onclick="disconnect()">Disconnect</button>
+                <span id="statusBox"> STATUS:<span id="connectionStatus"> No Connection Established (Models might be training... retry in a few minutes!)</span></span>
+        </div><hr><br>
+        <style>
+        body {
+              background-image: url('dust_scratches.png');
+              }
+        </style>
+
+        <script type="text/javascript">
+                 $(function(){
+                var $select = $(".60-100");
+                for (i=60;i<=100;i++){
+                    $select.append($('<option></option>').val(i).html(i))
+                }
+                });
+
+                 $(function(){
+                var $select = $(".1-40");
+                for (i=1;i<=40;i++){
+                    $select.append($('<option></option>').val(i).html(i))
+                }
+                });
+
+                 $(function(){
+                var $select = $(".1-5");
+                for (i=1;i<=5;i++){
+                    $select.append($('<option></option>').val(i).html(i))
+                }
+                });
+
+                 $(function(){
+                var $select = $(".1-30");
+                for (i=1;i<=30;i++){
+                    $select.append($('<option></option>').val(i).html(i))
+                }
+                });
+
+
+        </script>
+        <table>
+            <tr>
+                <td>
+                    <label for="age" title="The age of the participant/User">Age:</label><br>
+                    <select id="age" class="60-100"></select><br><br>
+            
+                    <label for="gender" title="The gender of the pariticipant: Male, Female, Other">Gender:</label><br>
+                    <select id="gender">
+                       <option value="male">Male</option>
+                       <option value="female">Female</option>
+                    </select><br><br>
+            
+                    <label for="educ" title="How many years of education the participant enrolled in">Years of Education:</label><br>
+                    <select id="educ" class="1-40"></select><br><br>
+            
+                    <label for="ses" title="The Socio-economic status of the individual. On a scale 1-5">Socio-economic status:</label><br>
+                    <select id="ses" class="1-5"></select><br><br>
+            
+            
+                    <label for="mmse" title="The score acquired from the mmse test. On a scale 1-30">Mini-Mental state exam score:</label><br>
+                    <select id="mmse" class="1-30"></select><br><br>
+            
+                    <p><i> If applicable, please add values for the below biomarkers: </i></p><br>
+            
+                    <label for="etiv" title="Estimated Total Intracranial Volume of the subject- https://pubmed.ncbi.nlm.nih.gov/8847593/">eTIV:</label><br>
+                    <input type="text" id="etiv" name="etiv" value="0n"><br><br>
+            
+                    <label for="nwbv" title="Normalized whole brain volume">nWBV:</label><br>
+                    <input type="text" id="nwbv" name="nwbv" value="0n"><br><br>
+            
+                    <label for="asf" title="The Atlas Scaling Factor">ASF:</label><br>
+                    <input type="text" id="asf" name="asf" value="0n"><br><br>
+
+                    <label for="boruta" title="If enabled, only features found important using Boruta Algorithm will be used (nwbv value is imperative for accurate analysis). If disabled, will only use mmse,age,educ to predict outcome">Boruta Algorithm enabled?</label><br>
+                    <select id="boruta">
+                       <option value="N">No</option>
+                       <option value="Y">Yes</option>
+                    </select><br><br>
+            
+                    <label for="algo" title="Select a machine learning model that will be used to make predictions">Machine Learning Algorithm:</label><br>
+                    <select id="algo">
+                       <option value="RandomForests">Random Forest</option>
+                       <option value="SVM">Support Vector Machine</option>
+                       <option value="Adaboost">Adaboost</option>
+                       <option value="LogisticRegression">Logistic Regression</option>
+                       <option value="GradientBoost">Gradient Boosting</option>
+                    </select><br><br>
+            
+                    <input type="submit" value="Submit" onclick="sendKDB()">
+                </td>
+                <td id="probDisplay" align="right" style="vertical-align:top;padding:10px;visibility:hidden;font-weight: bold;color: blue">
+                    Score:  <span style="color:magenta"></span>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
