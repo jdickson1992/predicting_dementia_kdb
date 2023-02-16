@@ -21,14 +21,16 @@ It was recently migrated to this repo. *It was a lift & shift where no logic was
 
 `Python3.6` is unfortunately **EOL** now 😔
 
-Also, the `q` logic used in this project is *disorganised*. The lack of namespacing triggers me 🤨
+Also, the `q` logic used in this project is *disorganised*. The lack of namespacing triggers me 🤨. 
+
+Similarly, I would like to think I've grasped `q` better since there ... so the logic could almost certainly be improved.
 
 > *Time permitting*, I'll get around to updating the `q` code and updating to a different version of python!
 
 Oh, this has **only** been tested on `amd64`, **not** M1 (`arm64`) chips (see [here](https://github.com/jupyter/docker-stacks/issues/1549) for possible issues)
 
 **Update**
-- Tested successfully on `M1` and `WSL2` with **Docker Desktop 4.16.2**
+- Tested successfully on `M1` and `Linix` using **Docker Desktop 4.16.2**
 
 ## Getting Started 🎬
 
