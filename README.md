@@ -2,6 +2,7 @@
 
 *Modelling machine learning techniques using kdb+ to predict the early onset/symptoms of Dementia &amp; Alzheimer's Disease*
 
+I created a series of blogs describing this project over at https://jdickson.dev/ 📍
 
 ## Disclaimer ⚠️
 
@@ -15,7 +16,7 @@ Also, the `q` logic used in this project is *disorganised*. The lack of namespac
 
 > *Time permitting*, I'll get around to updating the `q` code and updating to a different version of python!
 
-This has **only** been tested on `amd64`, **not** M1 (`arm64`) chips (see [here](https://github.com/jupyter/docker-stacks/issues/1549) for possible issues)
+Oh, this has **only** been tested on `amd64`, **not** M1 (`arm64`) chips (see [here](https://github.com/jupyter/docker-stacks/issues/1549) for possible issues)
 
 ## Getting Started 🎬
 
