@@ -72,7 +72,7 @@ A container should have also been created that houses a web application.
 
 It should be accessible via a browser by going to the address: http://localhost:8080.
 
-The *placeholder* connection field should already have the correct connection details to the Jupyter notebook. Just click **connect**.
+The *placeholder* connection field **should** be populated with the correct connection details to the notebook. Just click **connect** ✅
 
 > If the *models are being trained*, the q process **could be blocked** momentarily. Try again in a few minutes.
 >
