@@ -1,4 +1,4 @@
-FROM centos/python-36-centos7
+FROM --platform=linux/x86_64 centos/python-36-centos7
 
 USER root 
 
