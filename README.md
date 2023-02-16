@@ -4,6 +4,8 @@
 
 I created a series of blogs describing this project over at https://jdickson.dev/ 📍
 
+The full Jupyter notebook can be found here https://jdickson.dev/files/predictingdementia 📝
+
 Datasets used in this project have been provided by the **Open Access Series of Imaging Studies (OASIS)**. Acknowledgements:
 
 > OASIS-1: Cross-Sectional: Principal Investigators: D. Marcus, R, Buckner, J, Csernansky J. Morris; P50 AG05681, P01 AG03991, P01 AG026276, R01 AG021910, P20 MH071616, U24 RR021382
@@ -26,7 +28,7 @@ Also, the `q` logic used in this project is *disorganised*. The lack of namespac
 Oh, this has **only** been tested on `amd64`, **not** M1 (`arm64`) chips (see [here](https://github.com/jupyter/docker-stacks/issues/1549) for possible issues)
 
 **Update**
-- Tested successfully on M1 and WSL2 with **Docker Desktop 4.16.2**
+- Tested successfully on `M1` and `WSL2` with **Docker Desktop 4.16.2**
 
 ## Getting Started 🎬
 
@@ -68,7 +70,7 @@ The logs of the jupyter container should output a `<url?token>` path. Grab that 
 
 ```bash
 $ docker logs `docker ps --format "{{.Names}}" --filter name=notebook` 2>&1 | grep '127.0' | tail -n 1
-     or http://127.0.0.1:8888/?token=ea3bae6a687c231dd2ca41dbba3edf653f92392eebc7a512
+  http://127.0.0.1:8888/?token=ea3bae6a687c231dd2ca41dbba3edf653f92392eebc7a512
 ```
 
 Voilà, this should bring up a homepage where a notebook called `predictingDementia.ipynb` exists. Click on the file to access the notebook.
@@ -85,9 +87,26 @@ A container should have also been created that houses a web application.
 
 It should be accessible via a browser by going to the address: http://localhost:8080.
 
-The *placeholder* connection field **should** be populated with the correct connection details to the notebook. Just click **connect** ✅
+The *placeholder* connection field **should** be populated with the correct connection details to the notebook. 
+
+*Just click **connect*** ✅
 
 > If the *models are being trained*, the q process **could be blocked** momentarily. Try again in a few minutes.
 >
 > If models are yet to be trained. You'll receive a message back in the GUI whenever you attempt to submit values.
 
+## Issues 🎯
+
+
+- [ ] Have you dropped your `l64` and `kc.lic` in the `q` directory 📁
+  - The base image uses a CentOS image which is a Linux distribution. `m64` wont work here!
+ 
+- [ ] Have you installed the latest Docker update? 🐳
+  - This has been tested on Docker Desktop `4.16.2` / `4.16.3`.
+
+- [ ] Is the evaluation taking too long? 🐌
+  - There's an environment variable called `THREADS` in defined in the docker-compose [file](https://github.com/jdickson1992/predicting_dementia_kdb/blob/main/docker-compose.yml#L11).
+  - This **controls** how many parallel jobs run during *hyperparameter* tuning (GridSearch etc).
+  - Generally, *more threads = better performance*.
+  - How much resources are available to Docker?
+    - *Can you give more CPU / Memory?*
