@@ -120,7 +120,7 @@ The *placeholder* connection field **should** be populated with the correct conn
 
 
 - [ ] Have you dropped your `l64` and `kc.lic` in the `q` directory 📁
-  - The base image uses a CentOS image which is a Linux distribution. `m64` wont work here!
+  - The base image uses CentOS which is a **Linux distribution**. `m64` wont work here!
  
 - [ ] Have you installed the latest Docker update? 🐳
   - This has been tested on Docker Desktop `4.16.2` / `4.16.3`.
