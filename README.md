@@ -1,8 +1,15 @@
 # Predicting the early symptoms of Dementia
 
-*Modelling machine learning techniques using kdb+ to predict the early symptoms of Dementia &amp; Alzheimer's Disease*
+*Modelling machine learning techniques using kdb+ to predict the early symptoms of Dementia &amp; Alzheimer's Disease*.
 
 I created a series of blogs describing this project over at https://jdickson.dev/ 📍
+
+Datasets used in this project have been provided by the **Open Access Series of Imaging Studies (OASIS)**. Acknowledgements:
+
+> OASIS-1: Cross-Sectional: Principal Investigators: D. Marcus, R, Buckner, J, Csernansky J. Morris; P50 AG05681, P01 AG03991, P01 AG026276, R01 AG021910, P20 MH071616, U24 RR021382
+> 
+> OASIS-2: Longitudinal: Principal Investigators: D. Marcus, R, Buckner, J. Csernansky, J. Morris; P50 AG05681, P01 AG03991, P01 AG026276, R01 AG021910, P20 MH071616, U24 RR021382
+
 
 ## Disclaimer ⚠️
 
@@ -43,6 +50,8 @@ q
 
 *where `QHOME` is the path to your q installation*
 
+---
+
 ### Jupyter notebook 📓
 To bring up the `Jupyterq` notebook:
 
@@ -65,6 +74,7 @@ Voilà, this should bring up a homepage where a notebook called `predictingDemen
 
 <img width="749" alt="Screenshot 2023-02-16 at 12 21 39" src="https://user-images.githubusercontent.com/47530786/219366279-be601843-221d-43c4-91a4-cf4dc81564d3.png">
 
+---
 
 ### Web GUI 📊
 
