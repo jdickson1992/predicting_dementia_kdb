@@ -1,4 +1,4 @@
-# Predicting the early symptoms of Dementia
+# Predicting the early symptoms of Dementia 🧠
 
 *Modelling machine learning techniques using kdb+ to predict the early symptoms of Dementia &amp; Alzheimer's Disease*.
 
