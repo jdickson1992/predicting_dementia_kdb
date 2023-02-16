@@ -126,7 +126,7 @@ The *placeholder* connection field **should** be populated with the correct conn
   - This has been tested on Docker Desktop `4.16.2` / `4.16.3`.
 
 - [ ] Is the evaluation taking too long? 🐌
-  - There's an environment variable called `THREADS` in defined in the docker-compose [file](https://github.com/jdickson1992/predicting_dementia_kdb/blob/main/docker-compose.yml#L11).
+  - There's an environment variable called `THREADS` defined in the docker-compose [file](https://github.com/jdickson1992/predicting_dementia_kdb/blob/main/docker-compose.yml#L11).
   - This **controls** how many parallel jobs run during *hyperparameter* tuning (GridSearch etc).
   - Generally, *more threads = better performance*.
   - How much resources are available to Docker?
