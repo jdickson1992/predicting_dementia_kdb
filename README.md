@@ -89,11 +89,29 @@ It should be accessible via a browser by going to the address: http://localhost:
 
 The *placeholder* connection field **should** be populated with the correct connection details to the notebook. 
 
-*Just click **connect*** ✅
+*Just click **connect*** 🖱️
+
+***Not exhibiting signs of Dementia*** ✅
+
+![image](https://user-images.githubusercontent.com/47530786/219424089-c1562125-38d8-43c7-b2cc-8d028844e9e5.png)
+
+***Exhibiting signs of Dementia*** ❌
+
+![image](https://user-images.githubusercontent.com/47530786/219424571-92750fe4-9ffb-4355-8e44-8eb77a2019cd.png)
+
+*The GUI supports predictions using different algos*
 
 > If the *models are being trained*, the q process **could be blocked** momentarily. Try again in a few minutes.
 >
 > If models are yet to be trained. You'll receive a message back in the GUI whenever you attempt to submit values.
+
+
+<details open>
+<summary>⚠️ Note: this application does not actually predict Dementia 👇 ⚠️</summary>
+
+*It’s important to remember that the dataset used for this experiment was small, and as a result, models trained on this set, ran the risk of overfitting where models were more susceptible to seeing patterns that didn’t exist, resulting in high variance and poor generalisation on a test dataset.*
+
+</details>
 
 ## Issues 🎯
 
