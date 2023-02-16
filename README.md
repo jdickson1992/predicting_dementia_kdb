@@ -70,7 +70,7 @@ Voilà, this should bring up a homepage where a notebook called `predictingDemen
 
 A container should have also been created that houses a web application.
 
-It should be accessible via the browser going to http://localhost:8080.
+It should be accessible via a browser by going to the address: http://localhost:8080.
 
 The *placeholder* connection field should already have the correct connection details to the Jupyter notebook. Just click **connect**.
 
