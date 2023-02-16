@@ -62,8 +62,10 @@ Voilà, this should bring up a homepage where a notebook called `predictingDemen
 
 *Tip*: `Ctrl + Enter` will execute each cell within the notebook. If you just want the whole notebook to run:
 
+<img width="749" alt="Screenshot 2023-02-16 at 12 21 39" src="https://user-images.githubusercontent.com/47530786/219366279-be601843-221d-43c4-91a4-cf4dc81564d3.png">
 
-### Web GUI
+
+### Web GUI 📊
 
 A container should have also been created that houses a web application.
 
@@ -71,5 +73,7 @@ It should be accessible via the browser going to http://localhost:8080.
 
 The *placeholder* connection field should already have the correct connection details to the Jupyter notebook. Just click **connect**.
 
-> *If the models are being trained, the q process could be blocked momentarily. Try again in a few minutes.
+> If the *models are being trained*, the q process **could be blocked** momentarily. Try again in a few minutes.
+>
+> If models are yet to be trained. You'll receive a message back in the GUI whenever you attempt to submit values.
 
