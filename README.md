@@ -1,3 +1,11 @@
+**TOC**: 
+
+1. [ 👋 Introduction ](#desc)
+2. [ ⚠️ Disclaimer ](#disclaimer)
+3. [🎬 Getting Started](#start)
+4. [💣 Issues](#issues)
+
+<a name="desc"></a>
 # Predicting the early symptoms of Dementia 🧠
 
 *Modelling machine learning techniques using kdb+ to predict the early symptoms of Dementia &amp; Alzheimer's Disease*.
@@ -12,7 +20,7 @@ Datasets used in this project have been provided by the **Open Access Series of 
 > 
 > OASIS-2: Longitudinal: Principal Investigators: D. Marcus, R, Buckner, J. Csernansky, J. Morris; P50 AG05681, P01 AG03991, P01 AG026276, R01 AG021910, P20 MH071616, U24 RR021382
 
-
+<a name="disclaimer"></a>
 ## Disclaimer ⚠️
 
 This project was created ~ 2018.
@@ -32,6 +40,7 @@ Oh, this has **only** been tested on `amd64`, **not** M1 (`arm64`) chips (see [h
 **Update**
 - Tested successfully on `M1` and `Linix` using **Docker Desktop 4.16.2**
 
+<a name="start"></a>
 ## Getting Started 🎬
 
 Everything is containerised 🐳
@@ -116,6 +125,7 @@ The *placeholder* connection field **should** be populated with the correct conn
 
 </details>
 
+<a name="issues"></a>
 ## Issues 🎯
 
 
