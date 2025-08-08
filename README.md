@@ -25,6 +25,8 @@ Datasets used in this project have been provided by the **Open Access Series of 
 
 This project was created ~ 2018.
 
+**Sources** can be found [here](./docs/sources.md).
+
 It was recently migrated to this repo. *It was a lift & shift where no logic was optimised or updated.*
 
 `Python3.6` is unfortunately **EOL** now 😔
